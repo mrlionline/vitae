@@ -2,3 +2,69 @@
 	padding: 0;
 	margin: 0;
 }
+
+.section1{
+	overflow: hidden;
+}
+.head_wrap{
+	position: relative;
+	width: 50%;
+	margin:0 auto;
+	font-size: 0;
+	transform: translateY(-250px);
+}
+.head_wrap{
+	animation: head_wrap_show 700ms ease-in-out forwards;
+}
+@keyframes head_wrap_show{
+	0%{
+		transform: translateY(-250px);
+	}
+	50%{
+		transform: translateY(30px);
+	}
+	70%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(30px);
+	}
+}
+.head{
+	width: 35%;
+	height: 35%;
+	border-radius: 100%;
+	overflow: hidden;
+	margin:0 auto;
+	border:2px solid #ccc;
+	box-shadow: 0 0 10px #ccc;
+	padding: 3px;
+}
+.head .head_img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
+.link{
+	width: 10%;
+	position: absolute;
+	top: 50%;
+	transition: transform 400ms ease-in;
+	transform:translateY(-50%) rotate(0deg);
+}
+.link:hover{
+	transform:translateY(-50%) rotate(360deg);
+}
+.head_wrap .head_github{
+	left: 5%;
+}
+.head_wrap .head_zhihu{
+	right: 5%;
+	background: #000;
+	border-radius: 100%;
+}
+.head_github img,
+.head_zhihu img{
+	width: 100%;
+	height: 100%;
+}
