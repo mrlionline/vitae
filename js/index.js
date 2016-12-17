@@ -55,7 +55,7 @@ $(function(){
                 },650)
             }
             if (index === 3) {
-                
+                requestAnimationFrame(mask_width_fn)
             }
             if (index === 4) {
                 
@@ -69,8 +69,13 @@ $(function(){
                 onLeave_num = index;
                 progress_back()
             }
+            if (index === 3) {
+                $("#mask").width("100%")
+                mask_width = 100
+            }
         }
     });
+// section2  start
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     function step(ele,step,width,a,degree,ico){
         if (step <= 40) {
@@ -148,5 +153,18 @@ $(function(){
                 $("#progress_color"+String(i)).css('width','0%')
             }
         }
+// section2  end
+
+// section3  start
+    // 遮罩层width递减
+    var mask_width = 100;
+    function mask_width_fn(){
+        $("#mask").width(mask_width+"%")
+        mask_width -= 1;
+        if (mask_width >= 0) {
+            requestAnimationFrame(mask_width_fn)
+        }
+    }
+// section3  end
         
 });
