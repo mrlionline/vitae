@@ -493,6 +493,7 @@ ul li{
 	-webkit-transform-origin:0 0;
 	-moz-transform-origin:0 0;
 	-o-transform-origin:0 0;
+	z-index: 1000;
 }
 .active .s5_title{
 	animation: turn_left_top 1000ms ease-in-out 1200ms forwards;

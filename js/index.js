@@ -85,10 +85,16 @@ $(function(){
                 my_tel_index = 17;
                 $("#s5_tel").html('')
                 s5_tel_html = '<div id="s5_tel_wrap" class="s5_tel_wrap"></div>';
-                $("#s5_tel").css("border","none")
-                $("#s5_tel_wrap").css("opacity","0")
+                $("#s5_tel").css({
+                    "border":"none",
+                    "box-shadow":"none",
+                    "background":"#ED6461"
+                })
+                $("#s5_tel_wrap").css({
+                    "opacity":"0",
+                    "display":"block"
+                })
                 $("#s5_tel").removeClass("s5_tel_animate")
-                $("#s5_tel").css("box-shadow","none")
             }
         }
     });
@@ -212,7 +218,11 @@ $(function(){
         $("#s5_tel_wrap").animate({
             "opacity" : "0",
         },200,function(){
-            $("#s5_tel").css("box-shadow","7px 7px #000")
+            $("#s5_tel").css({
+                "box-shadow":"7px 7px #000",
+                "background":"#FF625F"
+            });
+            $("#s5_tel_wrap").css("display","none")
         })
     }
 // section5  end
