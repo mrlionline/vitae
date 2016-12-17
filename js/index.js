@@ -79,11 +79,12 @@ $(function(){
                 mask_width = 100
             }
             if (index === 5) {
+                is_s5 = false;
                 my_tel_index = 17;
-                $("#s5_tel").html('<div id="s5_tel_wrap" class="s5_tel_wrap"></div>')
-                alert($("#s5_tel").html())
+                $("#s5_tel").html('')
+                s5_tel_html = '<div id="s5_tel_wrap" class="s5_tel_wrap"></div>';
                 $("#s5_tel").css("border","none")
-                // $("#s5_tel_wrap").css("opacity","0")
+                $("#s5_tel_wrap").css("opacity","0")
                 $("#s5_tel").removeClass("s5_tel_animate")
                 $("#s5_tel").css("box-shadow","none")
             }
@@ -185,7 +186,6 @@ $(function(){
     //不停显示电话
     var s5_tel_html = '<div id="s5_tel_wrap" class="s5_tel_wrap"></div>';
     function show_tel(){
-         console.log(123)
         if (my_tel_index === 17) {
             my_tel_index = 0;
             ranNum = Math.ceil(Math.random()*35)+15;
@@ -195,7 +195,9 @@ $(function(){
         my_tel_index++
         var s5_tel_height = $("#s5_tel").height();
         if (s5_tel_height < (h*0.7) || my_tel_index != 17) {
-            requestAnimationFrame(show_tel)
+            if (is_s5 === true) {
+                requestAnimationFrame(show_tel)
+            }
         }else{
             take_picture()
         }
