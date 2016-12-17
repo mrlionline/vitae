@@ -541,9 +541,31 @@ ul li{
 	top: 10px;
 }
 .s5_tel{
+	position: relative;
 	color:#FFF;
-	padding: 100px 50px 20px 50px;
+	margin:100px 50px 20px 50px;
+	padding: 10px;
 	line-height: 50px;
 	word-wrap:break-word; 
+}
+.s5_tel_animate{
+	animation: s5_tel_animate 200ms linear forwards;
+}
+@keyframes s5_tel_animate{
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0.95);
+	}
+}
+.s5_tel .s5_tel_wrap{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
 }
 /*section5  end*/
