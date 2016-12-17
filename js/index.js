@@ -23,6 +23,10 @@ $(function(){
     }
     Initialization_width()
     var onLeave_num ;
+    var h =  window.innerHeight;
+    var my_tel = "156-3302-6314   ";
+    var my_tel_index = 17;
+
     $('#dowebok').fullpage({
         'verticalCentered': false,
         'css3': true,
@@ -61,7 +65,7 @@ $(function(){
                 
             }
             if (index === 5) {
-                
+                requestAnimationFrame(show_tel)
             }
         },
         onLeave: function(index){
@@ -166,5 +170,24 @@ $(function(){
         }
     }
 // section3  end
+
+// section5  start
+    //不停显示电话
+    var s5_tel_html = "";
+    function show_tel(){
+        if (my_tel_index === 17) {
+            my_tel_index = 0;
+            ranNum = Math.ceil(Math.random()*35)+15;
+        }
+        s5_tel_html += '<span style="font-size: '+ranNum+'px">'+my_tel.charAt(my_tel_index)+'</span>'
+        $("#s5_tel").html(s5_tel_html)
+        my_tel_index++
+        var s5_tel_height = $("#s5_tel").height();
+        console.log(s5_tel_height+":::::"+h)
+        if (s5_tel_height < (h*0.7) || my_tel_index != 17) {
+            requestAnimationFrame(show_tel)
+        }
+    }
+// section5  end
         
 });
