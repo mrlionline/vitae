@@ -495,7 +495,7 @@ ul li{
 	-o-transform-origin:0 0;
 }
 .active .s5_title{
-	animation: turn_left_top 1000ms ease-in-out 1000ms forwards;
+	animation: turn_left_top 1000ms ease-in-out 1200ms forwards;
 }
 @keyframes turn_left_top{
 	0%{

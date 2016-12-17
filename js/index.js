@@ -66,7 +66,9 @@ $(function(){
             }
             if (index === 5) {
                 is_s5 = true;
-                requestAnimationFrame(show_tel)
+                setTimeout(function(){
+                    requestAnimationFrame(show_tel)
+                },1200)
             }
         },
         onLeave: function(index){
