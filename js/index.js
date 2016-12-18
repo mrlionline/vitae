@@ -25,7 +25,7 @@ $(function(){
     var onLeave_num ;
     var h =  window.innerHeight;
     var my_tel = "156-3302-6314   ";
-    var my_tel_index = 17;
+    var my_tel_index = 0;
 
     $('#dowebok').fullpage({
         'verticalCentered': false,
@@ -195,25 +195,36 @@ $(function(){
     var s5_tel_html = '<div id="s5_tel_wrap" class="s5_tel_wrap"></div>';
     function show_tel(){
         if (my_tel_index === 17) {
+            s5_tel_html += '</a>'
+            $("#s5_tel").html(s5_tel_html)
             my_tel_index = 0;
-            ranNum = Math.ceil(Math.random()*35)+15;
         }
-        s5_tel_html += '<span style="font-size: '+ranNum+'px">'+my_tel.charAt(my_tel_index)+'</span>'
-        $("#s5_tel").html(s5_tel_html)
-        my_tel_index++
-        var s5_tel_height = $("#s5_tel").height();
-        if (s5_tel_height < (h*0.7) || my_tel_index != 17) {
-            if (is_s5 === true) {
+        if (my_tel_index === 0) {
+            ranNum = Math.ceil(Math.random()*35)+15;
+            s5_tel_html += '<a href="tel://15633026314" style="font-size: '+ranNum+'px">'
+            $("#s5_tel").html(s5_tel_html)
+        }
+        if (is_s5 === true) {
+
+            s5_tel_html += my_tel.charAt(my_tel_index)
+            $("#s5_tel").html(s5_tel_html)
+            my_tel_index++
+            var s5_tel_height = $("#s5_tel").height();
+
+            if (s5_tel_height < (h*0.7) || my_tel_index != 17) {
                 requestAnimationFrame(show_tel)
+            }else{
+                take_picture()
             }
-        }else{
-            take_picture()
         }
     }
 
     function take_picture(){
         $("#s5_tel").css("border","5px solid #FFF")
-        $("#s5_tel_wrap").css("opacity","1")
+        $("#s5_tel_wrap").css({
+            "opacity":"1",
+            "display":"block"
+        })
         $("#s5_tel").addClass("s5_tel_animate")
         $("#s5_tel_wrap").animate({
             "opacity" : "0",
