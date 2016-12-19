@@ -874,7 +874,7 @@ ul li{
 	}
 }
 
-.s5_title .dot{
+.s5_title .dot_l{
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -882,6 +882,16 @@ ul li{
 	background: #fff;
 	position: absolute;
 	left: 10px;
+	top: 10px;
+}
+.s5_title .dot_r{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background: #fff;
+	position: absolute;
+	right: 10px;
 	top: 10px;
 }
 .s5_tel{
