@@ -236,10 +236,9 @@ ul li{
 	font-size: 14px;
 	font-weight: bold;
 }
-.profile .profile_r dd{
+.profile .profile_r ol li{
 	font-size: 14px;
-	text-indent:28px;
-	margin-left: 28px;
+	margin-left: 44px;
 }
 /*简介部分  end*/
 
